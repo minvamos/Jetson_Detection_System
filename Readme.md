@@ -47,7 +47,9 @@ imutils : 0.5.4
 
 
 ## Training
-Part of [**PTL_Dataset_876x657.zip**](https://dl.orangedox.com/p6T3Fs) and the images taken by myself were used for learning.
+Part of [**PTL_Dataset_876x657.zip**](https://dl.orangedox.com/p6T3Fs) and the images taken by myself were used for training.
+
+Training is based on YOLOv5n in the GoogleColab environment using YOLOv5 ver6.0.
 |   |   |   |
 |---|---|---|
 | ![1](https://github.com/minvamos/Jetson_Detection_System/assets/122091776/931747b9-b8c6-4de6-8733-57b9cf07efa7) | ![2](https://github.com/minvamos/Jetson_Detection_System/assets/122091776/fa8af2a3-eb1d-4a31-8f77-5c91a7512774) | ![3](https://github.com/minvamos/Jetson_Detection_System/assets/122091776/4d86b1ea-52c1-4a0f-bcf0-64c065b6e44c) |
@@ -57,11 +59,22 @@ Part of [**PTL_Dataset_876x657.zip**](https://dl.orangedox.com/p6T3Fs) and the i
 |-----------|----------|------------|--------|
 | Images    | 2642      | 659       | 3201    |
 
+## Object Classification
+In this model, four classes of object recognition are possible.
 
+### 0 (Green): Green pedestrian traffic light
+### 1 (Cross): Crosswalks in a crossable state
+
+### 2 (D_Cross): Crosswalk in a non-crossable state (Vehicles are driving on a crosswalk)
+
+### 3 (Red): Red pedestrian traffic light
 ## Inference
 You can check the output videos in [**Video Link**](https://youtu.be/FFOofk3XE1s?si=jHIGIHz5xtgDS1eW) here.
 
-To proceed with real-time detection that can be checked by GUI using a USB camera, run ```main.py``` .
+To proceed with real-time detection that can be checked by GUI using a USB camera, run 
+```main.py``` .
+
+In this code, when a traversable state is detected, a voice (Japanese) is also output.
 
 ```
 $ python3 main.py
@@ -70,4 +83,4 @@ If you want to obtain a detection completed video file using mp4 file, run ```ma
 ```
 $ python3 main_output.py
 ```
-you have to change the path of mp4 files. 
+Change path of mp4 files if you have to. 
