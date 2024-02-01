@@ -59,6 +59,8 @@ Part of [**PTL_Dataset_876x657.zip**](https://dl.orangedox.com/p6T3Fs) and the i
 
 
 ## Inference
+You can check the output videos in [**Video Link**](https://youtu.be/FFOofk3XE1s?si=jHIGIHz5xtgDS1eW) here.
+
 To proceed with real-time detection that can be checked by GUI using a USB camera, run ```main.py``` .
 
 ```
