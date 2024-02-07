@@ -9,25 +9,19 @@ import time
 model = YoloTRT(library="yolov5/build/libmyplugins.so", engine="yolov5/build/cmodel.engine", conf=0.5, yolo_ver="v5")
 
 cap = cv2.VideoCapture('videos/6.mp4')
+# put video's directory you want to detect.
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480) 
 
 # Define the codec and create a VideoWriter object
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-out = cv2.VideoWriter('output_video_6.mp4', fourcc, 30.0, (640, 480))
+out = cv2.VideoWriter('output_video.mp4', fourcc, 30.0, (640, 480))
 
 #frame_count = 0
 
 while True:
     ret, frame = cap.read()
-    #frame_count += 1
 
-    #if not ret:
-    #    break
-
-    # Process every third frame
-    #if frame_count % 3 != 0:
-    #    continue
 
     Green = False
     Cross = False

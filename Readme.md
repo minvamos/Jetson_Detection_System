@@ -4,9 +4,29 @@
 
 The repository provides the NVIDIA Jetson Nano with Yolov5 and openCV, recognizing crosswalks and pedestrian traffic lights to determine if they can traverse.
 
+It is expected that visually impaired people will wear this equipment and help when using crosswalks.
+
 For model learning for object detection, [**Yolov5**](https://github.com/ultralytics/yolov5) was used. In order to use Jetson Nano's GPU, the learned model was converted into a TensorRT engine using [**Tensorrtx**](https://github.com/wang-xinyu/tensorrtx/tree/master/yolov5).
 
+The repository provides two inferences. One detects a crosswalk with a Real time camera and outputs a voice message saying it is possible to traverse when it is in a traversable state. For the rest, enter an mp4 file, and save the result as mp4.
+
 ## Requirement
+
+### Hardware
+
+[**Jetson Nano 2GB developer kit**](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-2gb-devkit)
+
+[**ELP 8mp USB Camera**](https://a.co/d/hiW5Qi0)
+
+-------------
+The equipment below is required only for main.py playing sound.
+
+[**USB sound card**](https://eleshop.jp/shop/g/gMAR121/?srsltid=AfmBOooG1S5eVXwVad2FVfjOR3HIlRD5SNnTIJkZ13JA1yQ3rukahjr83eg)
+
+[**Stereo single earphone**](https://amzn.asia/d/9Vk3nyw)
+
+### Software
+
 Operating system : JetPack 4.6
 
 Python : version 3.6.9
@@ -71,6 +91,13 @@ In this model, four classes of object recognition are possible.
 ## Inference
 You can check the output videos in [**Video Link**](https://youtu.be/FFOofk3XE1s?si=jHIGIHz5xtgDS1eW) here.
 
+Clone this project from the GitHub repository and go to the repository.
+```
+$ git clone https://github.com/minvamos/Jetson_Detection_System.git
+```
+```
+$ cd Jetson_Detection_System
+```
 To proceed with real-time detection that can be checked by GUI using a USB camera, run 
 ```main.py``` .
 
@@ -84,3 +111,10 @@ If you want to obtain a detection completed video file using mp4 file, run ```ma
 $ python3 main_output.py
 ```
 Change path of mp4 files if you have to. 
+
+## How this application works
+Here's how this application works.
+![al1](https://github.com/minvamos/Jetson_Detection_System/assets/122091776/2af27b02-4bf8-469e-b583-6575859be7fb)
+![al2](https://github.com/minvamos/Jetson_Detection_System/assets/122091776/fb82778c-ddee-472a-aa86-2588b51a076e)
+
+It operates in an infinite loop by default, and reads the frame of the image every cycle. In the frame, class 0 (Green light), class 1 (Safety crosswalk) is detected, indicating the traversable state.
