@@ -4,7 +4,7 @@ import imutils
 from yoloDet import YoloTRT
 from playsound import playsound
 import time
-# use path for library and engine file
+# use path for library and engine file.
 model = YoloTRT(library="yolov5/build/libmyplugins.so", engine="yolov5/build/cmodel.engine", conf=0.5, yolo_ver="v5")
 
 cap = cv2.VideoCapture('videos/2.mp4')
