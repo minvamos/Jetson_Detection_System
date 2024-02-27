@@ -9,6 +9,10 @@ It is expected that visually impaired people will wear this equipment and help w
 For model learning for object detection, [**Yolov5**](https://github.com/ultralytics/yolov5) was used. In order to use Jetson Nano's GPU, the learned model was converted into a TensorRT engine using [**Tensorrtx**](https://github.com/wang-xinyu/tensorrtx/tree/master/yolov5).
 
 The repository provides two inferences. One detects a crosswalk with a Real time camera and outputs a voice message saying it is possible to traverse when it is in a traversable state. For the rest, enter an mp4 file, and save the result as mp4.
+## NVIDIA Jetson AI Specialist
+![Jetson_AI_Specialist_Certification](https://github.com/minvamos/Jetson_Detection_System/assets/122091776/fbc52ba3-5dba-4848-bcef-ee36bd3fdd29)
+
+Through this project, I received Jetson AI Specialist certification from NVIDIA.
 
 ## Requirement
 
